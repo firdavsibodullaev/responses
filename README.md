@@ -2,12 +2,12 @@
 
 ### Success responses
 
-To return success responses use `Firdavs\Responses\Http\SuccessResponse`
+To return success responses use `Firdavsi\Responses\Http\SuccessResponse`
 
 ```php
 use App\Models\User;
 use App\Http\Resources\UsersResource;
-use Firdavs\Responses\Http\SuccessResponse;
+use Firdavsi\Responses\Http\SuccessResponse;
 
 public function index(): SuccessResponse
 {
@@ -20,10 +20,10 @@ public function index(): SuccessResponse
 }
 ```
 
-If you want to return empty responses use `Firdavs\Responses\Http\SuccessEmptyResponse`
+If you want to return empty responses use `Firdavsi\Responses\Http\SuccessEmptyResponse`
 
 ```php
-use Firdavs\Responses\Http\SuccessEmptyResponse;
+use Firdavsi\Responses\Http\SuccessEmptyResponse;
 
 public function index(): SuccessEmptyResponse
 {
@@ -37,10 +37,10 @@ public function index(): SuccessEmptyResponse
 
 ### Error responses
 
-To return error responses use `Firdavs\Responses\Http\ErrorResponse`
+To return error responses use `Firdavsi\Responses\Http\ErrorResponse`
 
 ```php
-use Firdavs\Responses\Http\ErrorResponse;
+use Firdavsi\Responses\Http\ErrorResponse;
 
 public function index(): ErrorResponse
 {
