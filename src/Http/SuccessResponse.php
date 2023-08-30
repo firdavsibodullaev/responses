@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Responses;
+namespace Firdavs\Responses\Http;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -13,8 +13,8 @@ class SuccessResponse implements Responsable
 {
     public function __construct(
         private readonly SymphonyResponse|Responsable $response,
-        private readonly int                          $status = 200,
-        private readonly string                       $message = ''
+        private readonly string                       $message = '',
+        private readonly int                          $status = 200
     )
     {
     }

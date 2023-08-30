@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Responses;
+namespace Firdavs\Responses\Http;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Facades\Response;
@@ -9,8 +9,8 @@ use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 class ErrorResponse implements Responsable
 {
     public function __construct(
-        private readonly string $message,
-        private readonly int    $status
+        private readonly string $message = '',
+        private readonly int    $status = 400
     )
     {
     }

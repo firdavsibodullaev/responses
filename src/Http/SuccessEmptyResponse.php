@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Responses;
+namespace Firdavs\Responses\Http;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Facades\Response;
