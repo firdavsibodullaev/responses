@@ -1,6 +1,6 @@
 {
   "name": "firdavsi/responses",
-  "description": "Make standard response",
+  "description": "Make standard responses to Laravel projects",
   "license": "MIT",
   "keywords": [
     "laravel",
