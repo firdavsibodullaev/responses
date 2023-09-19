@@ -17,11 +17,17 @@ class ErrorResponse implements Responsable
 
     public function toResponse($request): SymfonyResponse
     {
+        $response = [
+            'success' => false,
+            'message' => $this->message
+        ];
+
+        if (config('responses.with_timestamps')) {
+            $response['timestamp'] = now();
+        }
+
         return Response::make(
-            content: [
-                'success' => false,
-                'message' => $this->message
-            ],
+            content: $response,
             status: $this->status
         );
     }

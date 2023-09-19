@@ -25,5 +25,12 @@
     "illuminate/pagination": "^9.0|^10.0",
     "symfony/http-foundation": "^6.2"
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Firdavsi\\Responses\\ResponsesServiceProvider"
+      ]
+    }
+  }
 }

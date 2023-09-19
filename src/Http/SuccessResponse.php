@@ -31,6 +31,10 @@ class SuccessResponse implements Responsable
             $response = $response + $pagination;
         }
 
+        if (config('responses.with_timestamps')) {
+             $response['timestamp'] = now();
+        }
+
         return Response::make(
             content: $response,
             status: $this->status

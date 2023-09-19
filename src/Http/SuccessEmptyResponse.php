@@ -17,11 +17,17 @@ class SuccessEmptyResponse implements Responsable
 
     public function toResponse($request): SymfonyResponse
     {
+        $response = [
+            'success' => true,
+            'message' => $this->message
+        ];
+
+        if (config('responses.with_timestamps')) {
+            $response['timestamp'] = now();
+        }
+
         return Response::make(
-            content: [
-                'success' => true,
-                'message' => $this->message
-            ],
+            content: $response,
             status: $this->status
         );
     }
