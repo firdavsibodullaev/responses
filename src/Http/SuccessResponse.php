@@ -15,9 +15,7 @@ class SuccessResponse implements Responsable
         private readonly SymphonyResponse|Responsable $response,
         private readonly string                       $message = '',
         private readonly int                          $status = 200
-    )
-    {
-    }
+    ) {}
 
     public function toResponse($request): SymphonyResponse
     {
@@ -39,9 +37,15 @@ class SuccessResponse implements Responsable
 
     private function getData()
     {
-        return $this->response instanceof SymphonyResponse
-            ? json_decode($this->response->getContent(), true)
-            : $this->response;
+        if ($this->response instanceof SymphonyResponse) {
+            return json_decode($this->response->getContent(), true);
+        }
+
+        if ($this->response instanceof JsonResource && filled($this->response->additional)) {
+            return ['details' => $this->response, ...$this->response->additional];
+        }
+
+        return $this->response;
     }
 
     private function getPaginationFromResource(): bool|array
